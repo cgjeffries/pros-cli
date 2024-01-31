@@ -387,7 +387,7 @@ class Project(Config):
 
         def entry_map(entry: Compilation):
             json_entry = entry.as_db_entry()
-            json_entry['arguments'][0] = 'clang' if entry.compiler == 'c' else 'clang++'
+            json_entry['arguments'][0] = 'arm-none-eabi-gcc' if entry.compiler == 'c' else 'arm-none-eabi-g++'
             return json_entry
 
         entries = itertools.chain(old_entries, new_entries)
